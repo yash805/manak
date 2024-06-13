@@ -17,7 +17,7 @@ func main() {
 	}
 
 	numbers := []int{1, 2, 3, 4, 5}
-	for index, value := range numbers {
-		fmt.Printf("index of Number is %d, and value is %d\n", value)
+	for _, value := range numbers {
+		fmt.Printf("value is %d\n", value)
 	}
 }

@@ -1,16 +1,18 @@
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func process(a int, b string) (string, bool) {
-	result := fmt.Sprintf("Processed int: %d and string: %s", a, b)
+// func process(a int, b string) (string, bool) {
+// 	result := fmt.Sprintf("Processed int: %d and string: %s", a, b)
 
-	success := true
-	return result, success
-}
+// 	success := true
+// 	return result, success
+// }
 
-func main() {
-	result, success := process(40, "hello")
-	fmt.Println("Result", result)
-	fmt.Println("Success", success)
-}
+// func main() {
+// 	result, success := process(40, "hello")
+// 	fmt.Println("Result", result)
+// 	fmt.Println("Success", success)
+// }
+
+
