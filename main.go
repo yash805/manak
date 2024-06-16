@@ -1,9 +1,9 @@
 package main
 
 import (
-	"bufio"
+	
 	"fmt"
-	"os"
+	
 )
 
 // const topic string = "variable string"
@@ -16,9 +16,9 @@ func main() {
 	// fmt.Scan(&name)
 	// fmt.Println("hello", name)
 
-	reader := bufio.NewReader(os.Stdin)
-	name, _ := reader.ReadString('\n')
-	fmt.Println("hello", name)
+	// reader := bufio.NewReader(os.Stdin)
+	// name, _ := reader.ReadString('\n')
+	// fmt.Println("hello", name)
 }
 
 // package scope
