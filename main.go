@@ -1,9 +1,7 @@
 package main
 
 import (
-	
 	"fmt"
-	
 )
 
 // const topic string = "variable string"

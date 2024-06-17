@@ -69,12 +69,8 @@ func main() {
 	fmt.Println(employee1)
 }
 
-
-
 // e:= Employee{
 // 	person: Person{
 
 // 	},
 // 	position: "engineer"
-
-}

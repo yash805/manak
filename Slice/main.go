@@ -1,8 +1,8 @@
-package main
+// package main
 
-import "fmt"
+// import "fmt"
 
-func main() {
+// func main() {
 
 	// ******************************
 	// numbers := []int{1, 2, 3}
