@@ -15,7 +15,6 @@ func main() {
 	defer res.Body.Close()
 	fmt.Printf("Type of response: %T\n", res)
 	
-
 	// Read  the response body
 	data, err := ioutil.ReadAll(res.Body)
 	if err != nil {
