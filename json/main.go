@@ -33,3 +33,32 @@ func main() {
 	fmt.Println(personData)
 
 }
+package main
+import (
+	"encoding/json"
+	"fmt"
+)
+type Owner struct {
+	Name string `json:"name"`
+	Email string `json:"email"`
+}
+
+type Project struct {
+	Id int `json:"id"`
+	Name string`json:"name"`
+	Owner Owner `json:"owner"`
+}
+
+func main(){
+	jsonString := `{"id":1, "name":"project", "owner":{"name":"yash","email":"yash@gmail.com"}}`
+	var project Project
+
+	err := json.Unmarshal([]byte(jsonString), &project)
+	if err != nil {
+		fmt.Println("Marshalling", err)
+		return
+	}
+
+	fmt.Printf("parsed: %+v\n",project)
+	
+}
