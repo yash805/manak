@@ -14,8 +14,7 @@ type Todo struct {
 	Title string `json:"title"`
 	Comple bool `json:"comple"`
 }
-func main(){
-	fmt.Println("learning")
+func pGetRequest (){
 	res, err := http.Get("https://jsonplaceholder.typicode.com/todos/1")
 	if err != nil {
 		fmt.Println("error occured:", err)
@@ -44,5 +43,85 @@ func main(){
 	// }
 	
 	// fmt.Println(todo)
+}
 
+
+func pPostRequest(){
+	 todo := Todo {
+		UserID:22,
+		Title: "welcome",
+		Completed: true
+	}
+
+	jsonData, err := json.Marshal(todo)
+	if err != nil {
+		fmt.Println("Error handle",err)
+		return
+	}
+
+	jsonString := string(jsonData)
+
+	jsonReader := strings.NewReader(jsonString)
+
+    myURL := "https://jsonplaceholder.typicode.com/todos"
+
+	res, err := http.Post(myURL, "application/json",jsonReader)
+	if err != nil {
+		fmt.Println("Error handling",err)
+		return
+	}
+    
+	defer res.Body.Close()
+
+	// data, _ := ioutil.ReadAll(res.Body)
+	// fmt.Println("Response :", string(data))
+
+	fmt.Println(res.status)
+
+}
+
+
+func pUpdateRequest(){
+	todo := Todo {
+		UserID:22378,
+		Title: "welcome here",
+		Completed: false
+	}
+
+	jsonData, err := json.Marshal(todo)
+	if err != nil {
+		fmt.Println("Error marsh", err)
+		return
+	}
+
+	jsonString := string(jsonData)
+
+	jsonReader := strings.NewReader(jsonString)
+
+	const myurl := "https://jsonplaceholder.typicode.com/todos/1"
+
+	req, err := http.NewRequest(http.MethodPut, myurl, jsonReader)
+	if err != nil {
+		fmt.Println("Error marsh", err)
+		return
+	}
+   req.Header.Set("Content-Type", "application/json")
+
+   client := http.Client()
+
+   res, err := client.Do(req)
+
+   if err != nil {
+	fmt.Println("Error marsh", err)
+	return
+    }
+
+	defer res.Body.Close()
+
+data, _ := ioutil.ReadAll(res.Body)
+	fmt.Println("Response :", string(data))
+
+}
+func main(){
+	fmt.Println("learning")
 }
