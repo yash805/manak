@@ -1,22 +1,27 @@
+// API
 package main
 
 import (
 	"fmt"
+	"github.com/gorilla/mux"
+	"net/http"
 )
 
-// const topic string = "variable string"
+const (
+	WEBPORT = ":8080"
+)
 
 func main() {
 
-	fmt.Println("whats your name")
-	// var name string
+	router := mux.NewRouter()
 
-	// fmt.Scan(&name)
-	// fmt.Println("hello", name)
+	http.Handle("/", router)
 
-	// reader := bufio.NewReader(os.Stdin)
-	// name, _ := reader.ReadString('\n')
-	// fmt.Println("hello", name)
+	router.HandleFunc("/home", homefunc)
+
+	http.ListenAndServe(WEBPORT, nil)
 }
 
-// package scope
+func homefunc(w http.ResponseWriter, r *http.Request) {
+	fmt.Fprint(w, "Welcome to the home page")
+}
