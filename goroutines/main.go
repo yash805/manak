@@ -23,10 +23,8 @@ func main() {
 
 // func work(i int, wg *sync.WaitGroup) {
 // 	defer wg.Done()
-// 	fmt.Printf("work %d started\n", i)
-
+// 	fmt.Printf("work %d started\n", i
 // 	fmt.Printf("work %d end\n", i)
-
 // }
 
 // func main() {
